@@ -240,6 +240,8 @@ class Checkout extends Component<CheckoutProps & WithCheckoutProps & WithLanguag
                 isLoading={ isRedirecting }
             >
                 <div className="layout-main">
+                    <h1 className="page-heading"><TranslatedString id="common.checkout_heading" /></h1>
+
                     <LoadingNotification isLoading={ isPending } />
 
                     <PromotionBannerList promotions={ promotions } />

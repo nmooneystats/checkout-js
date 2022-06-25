@@ -28,15 +28,15 @@ $buttonStyle-default-borderColor:            color("greys", "medium");
 $buttonStyle-default-borderColorHover:       color("greys");
 $buttonStyle-default-borderColorActive:      color("greys", "dark");
 
-$buttonStyle-primary-color:                  color("whites", "bright");
-$buttonStyle-primary-colorHover:             color("whites", "bright");
-$buttonStyle-primary-colorActive:            color("whites", "bright");
-$buttonStyle-primary-backgroundColor:        color("primary");
-$buttonStyle-primary-backgroundColorHover:   color("primary", "dark");
-$buttonStyle-primary-backgroundColorActive:  color("primary", "darker");
-$buttonStyle-primary-borderColor:            color("primary");
-$buttonStyle-primary-borderColorHover:       color("primary", "dark");
-$buttonStyle-primary-borderColorActive:      color("primary", "darker");
+$buttonStyle-primary-color:                  color("blacks");
+$buttonStyle-primary-colorHover:             color("blacks");
+$buttonStyle-primary-colorActive:            color("blacks");
+$buttonStyle-primary-backgroundColor:        color("whites");
+$buttonStyle-primary-backgroundColorHover:   color("whites");
+$buttonStyle-primary-backgroundColorActive:  color("whites");
+$buttonStyle-primary-borderColor:            color("blacks");
+$buttonStyle-primary-borderColorHover:       color("blacks");
+$buttonStyle-primary-borderColorActive:      color("blacks");
 
 $buttonStyle-tertiary-color:                 color("highlight");
 $buttonStyle-tertiary-colorHover:            color("highlight", "dark");
@@ -199,11 +199,11 @@ $include-html-button-classes:           $include-html-classes;
 $button-display:                        inline-block;
 $button-margin-bottom:                  spacing("single");
 
-$button-font-family:                    $body-font-family;
+$button-font-family:                    $fontFamily-headings;
 $button-font-weight:                    $font-weight-normal;
 $button-font-align:                     center;
 
 $button-border-width:                   1px;
 $button-border-style:                   solid;
 
-$button-radius:                         3px;
+$button-radius:                         50px;

@@ -35,15 +35,18 @@ class OrderSummaryItems extends React.Component<OrderSummaryItemsProps, OrderSum
         const { isExpanded } = this.state;
 
         return (<Fragment>
-            <h3
-                className="cart-section-heading optimizedCheckout-contentPrimary"
+        <h3 className="cart-section-heading optimizedCheckout-contentPrimary">
+            <TranslatedString id="cart.cart_heading" />
+            <span
+                className="cart-section-order-count"
                 data-test="cart-count-total"
             >
                 <TranslatedString
                     data={ { count: getItemsCount(items) } }
                     id="cart.item_count_text"
                 />
-            </h3>
+            </span>
+        </h3>
 
             <ul aria-live="polite" className="productList">
                 {

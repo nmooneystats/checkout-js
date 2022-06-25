@@ -22,6 +22,7 @@ export { default as IconCardTroy } from './IconCardTroy';
 export { default as IconCheck } from './IconCheck';
 export { default as IconChevronUp } from './IconChevronUp';
 export { default as IconChevronDown } from './IconChevronDown';
+export { default as IconChevronLeft } from './IconChevronLeft';
 export { default as IconClose } from './IconClose';
 export { default as IconDogeCoin } from './IconDogeCoin';
 export { default as IconError } from './IconError';

@@ -57,12 +57,12 @@
             "digital_item_text": "Digital Item",
             "discount_text": "Discount",
             "downloads_action": "Go to Downloads",
-            "edit_cart_action": "Edit Cart",
+            "edit_cart_action": "Back",
             "estimated_total_text": "Estimated Total",
             "free_text": "Free",
             "gift_certificate_text": "Gift Certificate",
             "handling_text": "Handling",
-            "item_count_text": "{count, plural, one{1 Item} other{# Items} }",
+            "item_count_text": "({count, plural, one{1 Item} other{# Items} })",
             "print_action": "Print",
             "remaining_text": "Remaining",
             "remove_action": "remove",
@@ -78,6 +78,7 @@
             "empty_cart_message": "Your cart is empty, you are being redirected. Please <a href=\"{url}\" target=\"_top\">click here</a> if your browser does not redirect you."
         },
         "common": {
+            "checkout_heading": "Complete Your Order",
             "cancel_action": "Cancel",
             "close_action": "Close",
             "continue_action": "Continue",

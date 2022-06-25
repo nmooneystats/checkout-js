@@ -20,10 +20,6 @@
 .checkout-step {
     border-bottom: container("border");
     padding: spacing("single") 0;
-
-    &:last-child {
-        border: 0;
-    }
 }
 
 .checkout-view-header {
@@ -65,26 +61,38 @@
 .stepHeader-counter {
     @include square($checkoutStep-counter-size);
 
-    background-color: color("primary");
+    align-items: center;
+    background-color: transparent;
     border-radius: 50%;
+    color: $color-black;
+    display: flex;
     text-align: center;
     transition: transform 250ms ease;
 
     &::before {
         @include square($checkoutStep-counter-size);
 
-        color: $checkoutStep-counter-color;
+        color: $color-black;
         content: counter($checkoutStep-counter);
         counter-increment: $checkoutStep-counter;
         display: inline-block;
         font-size: fontSize("small");
+        font-size: 1.4rem;
+        font-weight: 700;
         line-height: #{$checkoutStep-counter-size}px;
         text-align: center;
     }
 
+    &::after {
+        content: "-";
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-left: 8px;
+    }
+
     svg {
         display: none;
-        fill: $checkoutStep-counter-color;
+        fill: $color-black;
         padding: $checkoutStep-counter-padding;
     }
 }
@@ -133,8 +141,18 @@
 }
 
 .stepHeader-title {
+    color: color("primary");
+    display: inline-block;
+    font-family: fontFamily("sans");
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02rem;
+    line-height: 1;
     margin: 0 0 0 $checkoutStep-header-figure-margin;
+    margin: 0 0 0 20px;
     min-width: 9rem;
+    text-transform: capitalize;
+    vertical-align: middle;
 }
 
 .stepHeader-body {
