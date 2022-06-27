@@ -13,6 +13,7 @@ import CustomerViewType from './CustomerViewType';
 import EmailLoginForm, { EmailLoginFormValues } from './EmailLoginForm';
 import GuestForm, { GuestFormValues } from './GuestForm';
 import LoginForm from './LoginForm';
+import { isZuoraIframeSuccess } from '../zuora';
 
 export interface CustomerProps {
     viewType: CustomerViewType;
@@ -119,6 +120,8 @@ class Customer extends Component<CustomerProps & WithCheckoutCustomerProps, Cust
         const shouldRenderGuestForm = viewType === CustomerViewType.Guest;
         const shouldRenderCreateAccountForm = viewType === CustomerViewType.CreateAccount;
         const shouldRenderLoginForm = !shouldRenderGuestForm && !shouldRenderCreateAccountForm;
+        const isZuoraIframeSuccessa = isZuoraIframeSuccess();
+        console.log('Is Success: ' + isZuoraIframeSuccessa)
 
         return (
             <LoadingOverlay
@@ -127,7 +130,7 @@ class Customer extends Component<CustomerProps & WithCheckoutCustomerProps, Cust
             >
                 { isEmailLoginFormOpen && this.renderEmailLoginLinkForm() }
                 { shouldRenderLoginForm && this.renderLoginForm() }
-                { shouldRenderGuestForm && this.renderGuestForm() }
+                { isZuoraIframeSuccessa && shouldRenderGuestForm && this.renderGuestForm() }
                 { shouldRenderCreateAccountForm && this.renderCreateAccountForm() }
             </LoadingOverlay>
         );
@@ -170,7 +173,6 @@ class Customer extends Component<CustomerProps & WithCheckoutCustomerProps, Cust
                 isLoading={ isContinuingAsGuest || isInitializing || isExecutingPaymentMethodCheckout }
                 onChangeEmail={ this.handleChangeEmail }
                 onContinueAsGuest={ this.handleContinueAsGuest }
-                onShowLogin={ this.handleShowLogin }
                 privacyPolicyUrl={ privacyPolicyUrl }
                 requiresMarketingConsent={ requiresMarketingConsent }
             />
@@ -406,12 +408,6 @@ class Customer extends Component<CustomerProps & WithCheckoutCustomerProps, Cust
 
     private handleChangeEmail: (email: string) => void = email => {
         this.draftEmail = email;
-    };
-
-    private handleShowLogin: () => void = () => {
-        const { onChangeViewType = noop } = this.props;
-
-        onChangeViewType(CustomerViewType.Login);
     };
 
     private executePaymentMethodCheckoutOrContinue: () => void = async () => {

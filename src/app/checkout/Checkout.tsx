@@ -23,6 +23,7 @@ import CheckoutStep from './CheckoutStep';
 import CheckoutStepStatus from './CheckoutStepStatus';
 import CheckoutStepType from './CheckoutStepType';
 import CheckoutSupport from './CheckoutSupport';
+import { ZuoraPayment } from '../zuora';
 
 const Billing = lazy(() => retry(() => import(
     /* webpackChunkName: "billing" */
@@ -317,6 +318,7 @@ class Checkout extends Component<CheckoutProps & WithCheckoutProps & WithLanguag
                         viewType={ customerViewType }
                     />
                 </LazyContainer>
+                <ZuoraPayment />
             </CheckoutStep>
         );
     }

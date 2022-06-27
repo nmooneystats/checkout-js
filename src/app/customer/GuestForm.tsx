@@ -21,7 +21,6 @@ export interface GuestFormProps {
     privacyPolicyUrl?: string;
     onChangeEmail(email: string): void;
     onContinueAsGuest(data: GuestFormValues): void;
-    onShowLogin(): void;
 }
 
 export interface GuestFormValues {
@@ -35,7 +34,6 @@ const GuestForm: FunctionComponent<GuestFormProps & WithLanguageProps & FormikPr
     continueAsGuestButtonLabelId,
     isLoading,
     onChangeEmail,
-    onShowLogin,
     privacyPolicyUrl,
     requiresMarketingConsent,
 }) => {
@@ -89,20 +87,6 @@ const GuestForm: FunctionComponent<GuestFormProps & WithLanguageProps & FormikPr
                         </Button>
                     </div>
                 </div>
-
-                {
-                    !isLoading && <p>
-                        <TranslatedString id="customer.login_text" />
-                        { ' ' }
-                        <a
-                            data-test="customer-continue-button"
-                            id="checkout-customer-login"
-                            onClick={ onShowLogin }
-                        >
-                            <TranslatedString id="customer.login_action" />
-                        </a>
-                    </p>
-                }
 
                 { checkoutButtons }
             </Fieldset>

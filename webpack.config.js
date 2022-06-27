@@ -33,6 +33,8 @@ const BABEL_PRESET_ENV_CONFIG = {
 
 const eventEmitter = new EventEmitter();
 
+const Dotenv = require('dotenv-webpack');
+
 function appConfig(options, argv) {
     const mode = argv.mode || 'production';
     const isProduction = mode !== 'development';
@@ -134,6 +136,7 @@ function appConfig(options, argv) {
                             return Promise.all(autoExportConfig.entries.map(autoExport));
                         },
                     }),
+                    new Dotenv(),
                 ].filter(Boolean),
                 module: {
                     rules: [
@@ -271,6 +274,7 @@ function loaderConfig(options, argv) {
                             copyFileSync(`${folder}/${AUTO_LOADER_ENTRY_NAME}-${appVersion}.js`, `${folder}/${AUTO_LOADER_ENTRY_NAME}.js`);
                         },
                     }),
+                    new Dotenv(),
                 ],
                 module: {
                     rules: [
