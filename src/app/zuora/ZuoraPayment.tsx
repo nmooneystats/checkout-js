@@ -1,15 +1,3 @@
-// import React, { FunctionComponent } from 'react';
-
-// const ZuoraPayment: FunctionComponent = () => (
-//     <div>
-//         <h1>Hello</h1>
-//     </div>)
-//     console.log("Whatsapp")
-// ;
-
-// export default ZuoraPayment;
-
-
 import React from 'react';
 
 export default function ZuoraPayment() {
